@@ -6,14 +6,14 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <style>
     :root {
-      --bg1: #7dd3fc;
-      --bg2: #a855f7;
-      --bg3: #4c1d95;
-      --card-bg: rgba(255, 255, 255, 0.82);
-      --accent: #5b4bff;
-      --text-main: #111827;
-      --text-sub: #4b5563;
-      --radius-xl: 32px;
+      --bg1: #2326b9;
+      --bg2: #050017;
+      --bg3: #011a4f;
+      --card-bg: #f7f4ff;
+      --accent: #6366f1;
+      --text-main: #f9fafb;
+      --text-sub: #e5e7eb;
+      --radius-xl: 34px;
     }
 
     * {
@@ -33,135 +33,277 @@
       overflow: hidden;
       padding: 24px;
       background:
-        radial-gradient(circle at top left, rgba(255, 255, 255, 0.45) 0, rgba(255, 255, 255, 0) 45%),
+        radial-gradient(circle at top left, rgba(255, 255, 255, 0.38) 0, rgba(255, 255, 255, 0) 38%),
         linear-gradient(135deg, var(--bg1), var(--bg2), var(--bg3));
     }
 
-    .stars,
-    .stars::before,
-    .stars::after {
+    .twinkle-back {
       position: fixed;
-      inset: -120px;
+      inset: -40px;
+      width: 2px;
+      height: 2px;
+      border-radius: 999px;
+      background: #ffffff;
       pointer-events: none;
-      background: transparent;
       z-index: 0;
-    }
-
-    .stars {
+      opacity: 0.35;
+      mix-blend-mode: screen;
+      will-change: transform;
       box-shadow:
-        6vw 8vh 0 0 #ffffff,
-        18vw 24vh 0 0 #fef9ff,
-        32vw 10vh 0 0 #fdfdfd,
-        48vw 30vh 0 0 #fef6ff,
-        70vw 18vh 0 0 #ffffff,
-        82vw 40vh 0 0 #fdf9ff,
-        12vw 60vh 0 0 #ffffff,
-        40vw 75vh 0 0 #f4f0ff,
-        65vw 90vh 0 0 #ffffff;
-      animation: fall1 22s linear infinite;
-      opacity: 0.85;
+        2vw 6vh 0 0 #ffffff,
+        6vw 10vh 0 0 #ffffff,
+        10vw 4vh 0 0 #ffffff,
+        14vw 12vh 0 0 #ffffff,
+        18vw 8vh 0 0 #ffffff,
+        22vw 14vh 0 0 #ffffff,
+        26vw 6vh 0 0 #ffffff,
+        30vw 10vh 0 0 #ffffff,
+        34vw 4vh 0 0 #ffffff,
+        38vw 12vh 0 0 #ffffff,
+        42vw 8vh 0 0 #ffffff,
+        46vw 14vh 0 0 #ffffff,
+        50vw 6vh 0 0 #ffffff,
+        54vw 10vh 0 0 #ffffff,
+        58vw 4vh 0 0 #ffffff,
+        62vw 12vh 0 0 #ffffff,
+        66vw 8vh 0 0 #ffffff,
+        70vw 14vh 0 0 #ffffff,
+        74vw 6vh 0 0 #ffffff,
+        78vw 10vh 0 0 #ffffff,
+        82vw 4vh 0 0 #ffffff,
+        86vw 12vh 0 0 #ffffff,
+        90vw 8vh 0 0 #ffffff,
+        94vw 14vh 0 0 #ffffff,
+
+        3vw 22vh 0 0 #ffffff,
+        7vw 28vh 0 0 #ffffff,
+        11vw 20vh 0 0 #ffffff,
+        15vw 30vh 0 0 #ffffff,
+        19vw 24vh 0 0 #ffffff,
+        23vw 32vh 0 0 #ffffff,
+        27vw 18vh 0 0 #ffffff,
+        31vw 26vh 0 0 #ffffff,
+        35vw 22vh 0 0 #ffffff,
+        39vw 30vh 0 0 #ffffff,
+        43vw 20vh 0 0 #ffffff,
+        47vw 28vh 0 0 #ffffff,
+        51vw 24vh 0 0 #ffffff,
+        55vw 32vh 0 0 #ffffff,
+        59vw 18vh 0 0 #ffffff,
+        63vw 26vh 0 0 #ffffff,
+        67vw 22vh 0 0 #ffffff,
+        71vw 30vh 0 0 #ffffff,
+        75vw 20vh 0 0 #ffffff,
+        79vw 28vh 0 0 #ffffff,
+        83vw 24vh 0 0 #ffffff,
+        87vw 32vh 0 0 #ffffff,
+        91vw 18vh 0 0 #ffffff,
+        95vw 26vh 0 0 #ffffff,
+
+        2vw 42vh 0 0 #ffffff,
+        6vw 50vh 0 0 #ffffff,
+        10vw 38vh 0 0 #ffffff,
+        14vw 46vh 0 0 #ffffff,
+        18vw 40vh 0 0 #ffffff,
+        22vw 52vh 0 0 #ffffff,
+        26vw 44vh 0 0 #ffffff,
+        30vw 56vh 0 0 #ffffff,
+        34vw 42vh 0 0 #ffffff,
+        38vw 50vh 0 0 #ffffff,
+        42vw 38vh 0 0 #ffffff,
+        46vw 46vh 0 0 #ffffff,
+        50vw 40vh 0 0 #ffffff,
+        54vw 52vh 0 0 #ffffff,
+        58vw 44vh 0 0 #ffffff,
+        62vw 56vh 0 0 #ffffff,
+        66vw 42vh 0 0 #ffffff,
+        70vw 50vh 0 0 #ffffff,
+        74vw 38vh 0 0 #ffffff,
+        78vw 46vh 0 0 #ffffff,
+        82vw 40vh 0 0 #ffffff,
+        86vw 52vh 0 0 #ffffff,
+        90vw 44vh 0 0 #ffffff,
+        94vw 56vh 0 0 #ffffff,
+
+        3vw 64vh 0 0 #ffffff,
+        7vw 72vh 0 0 #ffffff,
+        11vw 60vh 0 0 #ffffff,
+        15vw 68vh 0 0 #ffffff,
+        19vw 62vh 0 0 #ffffff,
+        23vw 74vh 0 0 #ffffff,
+        27vw 66vh 0 0 #ffffff,
+        31vw 78vh 0 0 #ffffff,
+        35vw 64vh 0 0 #ffffff,
+        39vw 72vh 0 0 #ffffff,
+        43vw 60vh 0 0 #ffffff,
+        47vw 68vh 0 0 #ffffff,
+        51vw 62vh 0 0 #ffffff,
+        55vw 74vh 0 0 #ffffff,
+        59vw 66vh 0 0 #ffffff,
+        63vw 78vh 0 0 #ffffff,
+        67vw 64vh 0 0 #ffffff,
+        71vw 72vh 0 0 #ffffff,
+        75vw 60vh 0 0 #ffffff,
+        79vw 68vh 0 0 #ffffff,
+        83vw 62vh 0 0 #ffffff,
+        87vw 74vh 0 0 #ffffff,
+        91vw 66vh 0 0 #ffffff,
+        95vw 78vh 0 0 #ffffff,
+
+        4vw 86vh 0 0 #ffffff,
+        8vw 94vh 0 0 #ffffff,
+        12vw 82vh 0 0 #ffffff,
+        16vw 90vh 0 0 #ffffff,
+        20vw 84vh 0 0 #ffffff,
+        24vw 96vh 0 0 #ffffff,
+        28vw 88vh 0 0 #ffffff,
+        32vw 100vh 0 0 #ffffff,
+        36vw 86vh 0 0 #ffffff,
+        40vw 94vh 0 0 #ffffff,
+        44vw 82vh 0 0 #ffffff,
+        48vw 90vh 0 0 #ffffff,
+        52vw 84vh 0 0 #ffffff,
+        56vw 96vh 0 0 #ffffff,
+        60vw 88vh 0 0 #ffffff,
+        64vw 100vh 0 0 #ffffff,
+        68vw 86vh 0 0 #ffffff,
+        72vw 94vh 0 0 #ffffff,
+        76vw 82vh 0 0 #ffffff,
+        80vw 90vh 0 0 #ffffff,
+        84vw 84vh 0 0 #ffffff,
+        88vw 96vh 0 0 #ffffff,
+        92vw 88vh 0 0 #ffffff,
+        96vw 100vh 0 0 #ffffff;
     }
 
-    .stars::before {
-      content: "";
+    /* 앞쪽 별 레이어 (조금 크고 반짝임) */
+    .twinkle-front {
+      position: fixed;
+      inset: -40px;
+      width: 3px;
+      height: 3px;
+      border-radius: 999px;
+      background: #ffffff;
+      pointer-events: none;
+      z-index: 0;
+      opacity: 0.8;
+      mix-blend-mode: screen;
+      will-change: transform;
+      animation: twinkle 4.5s ease-in-out infinite alternate;
       box-shadow:
-        10vw 15vh 0 0 #ffffff,
-        28vw 40vh 0 0 #fefbff,
-        55vw 22vh 0 0 #ffffff,
-        75vw 55vh 0 0 #f8f4ff,
-        90vw 28vh 0 0 #ffffff,
-        20vw 80vh 0 0 #fdf9ff,
-        52vw 95vh 0 0 #ffffff;
-      animation: fall2 30s linear infinite;
-      opacity: 0.7;
+        6vw 10vh 0 0 #ffffff,
+        18vw 18vh 0 0 #ffffff,
+        30vw 8vh 0 0 #ffffff,
+        42vw 18vh 0 0 #ffffff,
+        54vw 10vh 0 0 #ffffff,
+        66vw 20vh 0 0 #ffffff,
+        78vw 8vh 0 0 #ffffff,
+        90vw 18vh 0 0 #ffffff,
+
+        8vw 32vh 0 0 #ffffff,
+        22vw 40vh 0 0 #ffffff,
+        36vw 28vh 0 0 #ffffff,
+        50vw 38vh 0 0 #ffffff,
+        64vw 30vh 0 0 #ffffff,
+        78vw 42vh 0 0 #ffffff,
+        92vw 32vh 0 0 #ffffff,
+
+        10vw 54vh 0 0 #ffffff,
+        24vw 64vh 0 0 #ffffff,
+        38vw 52vh 0 0 #ffffff,
+        52vw 62vh 0 0 #ffffff,
+        66vw 54vh 0 0 #ffffff,
+        80vw 66vh 0 0 #ffffff,
+        94vw 56vh 0 0 #ffffff,
+
+        12vw 78vh 0 0 #ffffff,
+        26vw 88vh 0 0 #ffffff,
+        40vw 76vh 0 0 #ffffff,
+        54vw 86vh 0 0 #ffffff,
+        68vw 78vh 0 0 #ffffff,
+        82vw 90vh 0 0 #ffffff;
     }
 
-    .stars::after {
-      content: "";
-      box-shadow:
-        5vw 25vh 0 0 #ffffff,
-        22vw 52vh 0 0 #fefbff,
-        45vw 12vh 0 0 #ffffff,
-        68vw 65vh 0 0 #f9f5ff,
-        88vw 48vh 0 0 #ffffff,
-        30vw 92vh 0 0 #fdfbff;
-      animation: fall3 38s linear infinite;
-      opacity: 0.6;
-    }
-
-    @keyframes fall1 {
-      0%   { transform: translateY(-40px); opacity: 0.9; }
-      50%  { transform: translateY(40px);  opacity: 0.5; }
-      100% { transform: translateY(-40px); opacity: 0.9; }
-    }
-
-    @keyframes fall2 {
-      0%   { transform: translateY(40px);  opacity: 0.75; }
-      50%  { transform: translateY(-50px); opacity: 0.4; }
-      100% { transform: translateY(40px);  opacity: 0.75; }
-    }
-
-    @keyframes fall3 {
-      0%   { transform: translateY(-60px); opacity: 0.7; }
-      50%  { transform: translateY(50px);  opacity: 0.3; }
-      100% { transform: translateY(-60px); opacity: 0.7; }
+    @keyframes twinkle {
+      0%   { opacity: 0.45; }
+      50%  { opacity: 1; }
+      100% { opacity: 0.6; }
     }
 
     .shell {
-      max-width: 520px;
+      max-width: 640px;
       width: 100%;
       position: relative;
       z-index: 1;
+      display: flex;
+      justify-content: center;
     }
 
     .card {
       background: var(--card-bg);
-      backdrop-filter: blur(26px);
       border-radius: var(--radius-xl);
-      padding: 40px 40px 32px;
+      padding: 40px 56px 40px;
       box-shadow:
-        0 22px 60px rgba(15, 23, 42, 0.35),
-        0 0 0 1px rgba(255, 255, 255, 0.75);
+        0 26px 70px rgba(15, 23, 42, 0.55),
+        0 0 0 1px rgba(255, 255, 255, 0.9);
       display: flex;
       flex-direction: column;
       align-items: center;
       gap: 18px;
+      animation: floatIn 800ms cubic-bezier(0.19, 1, 0.22, 1);
+      transform-origin: center;
+    }
+
+    @keyframes floatIn {
+      0% {
+        opacity: 0;
+        transform: translateY(22px) scale(0.97);
+      }
+      70% {
+        opacity: 1;
+        transform: translateY(-4px) scale(1.01);
+      }
+      100% {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+      }
     }
 
     .avatar-wrap {
-      width: 210px;
-      border-radius: 28px;
-      padding: 6px;
-      background: linear-gradient(135deg, rgba(109, 96, 255, 0.7), rgba(236, 197, 255, 0.4));
+      width: 230px;
+      border-radius: 30px;
+      padding: 7px;
+      background: linear-gradient(135deg, rgba(129, 140, 248, 0.95), rgba(244, 219, 255, 0.9));
       box-shadow:
-        0 16px 42px rgba(15, 23, 42, 0.6),
-        0 0 0 1px rgba(255, 255, 255, 0.8);
+        0 18px 42px rgba(15, 23, 42, 0.6),
+        0 0 0 1px rgba(255, 255, 255, 0.95);
+      margin-bottom: 8px;
     }
 
     .avatar {
       display: block;
       width: 100%;
-      border-radius: 22px;
+      border-radius: 24px;
       object-fit: cover;
     }
 
     .tag {
-      margin-top: 14px;
-      padding: 6px 14px;
+      margin-top: 4px;
+      padding: 7px 18px;
       border-radius: 999px;
       font-size: 0.78rem;
-      letter-spacing: 0.13em;
+      letter-spacing: 0.16em;
       text-transform: uppercase;
       color: var(--accent);
-      background: rgba(91, 75, 255, 0.07);
+      background: rgba(99, 102, 241, 0.1);
     }
 
     .title {
-      font-size: 1.18rem;
+      font-size: 1.16rem;
       letter-spacing: 0.03em;
       text-align: center;
-      color: var(--text-main);
-      margin-top: 2px;
+      color: #0f172a;
+      margin-top: 6px;
     }
 
     .highlight {
@@ -170,19 +312,19 @@
 
     .subtitle {
       font-size: 0.95rem;
-      color: var(--text-sub);
+      color: #4b5563;
       text-align: center;
-      margin-top: 4px;
+      margin-top: 10px;
       line-height: 1.7;
     }
 
-    @media (max-width: 480px) {
+    @media (max-width: 640px) {
       .card {
-        padding: 30px 22px 26px;
+        padding: 30px 24px 32px;
       }
 
       .avatar-wrap {
-        width: 180px;
+        width: 200px;
       }
 
       .title {
@@ -190,13 +332,14 @@
       }
 
       .subtitle {
-        font-size: 0.88rem;
+        font-size: 0.9rem;
       }
     }
   </style>
 </head>
 <body>
-  <div class="stars"></div>
+  <div class="twinkle-back"  data-parallax="8"></div>
+  <div class="twinkle-front" data-parallax="16"></div>
 
   <main class="shell">
     <section class="card">
@@ -209,9 +352,51 @@
       </h1>
       <p class="subtitle">
         Hi, I'm banda XD.<br>
-        Maybe.. Comming Soon!
+        Maybe.. Coming Soon!
       </p>
     </section>
   </main>
+
+  <script>
+    // 마우스 + 시간 기반으로 부드럽게 계속 움직이는 파랄랙스
+    const layers = document.querySelectorAll('[data-parallax]');
+    let mouseNormX = 0;
+    let mouseNormY = 0;
+
+    window.addEventListener('mousemove', (e) => {
+      const w = window.innerWidth;
+      const h = window.innerHeight;
+      mouseNormX = (e.clientX / w - 0.5) * 2; // -1 ~ 1
+      mouseNormY = (e.clientY / h - 0.5) * 2;
+    });
+
+    window.addEventListener('mouseleave', () => {
+      mouseNormX = 0;
+      mouseNormY = 0;
+    });
+
+    function animate() {
+      const t = performance.now() / 1000;
+
+      layers.forEach((layer) => {
+        const strength = parseFloat(layer.dataset.parallax) || 0;
+
+        const driftX = Math.sin(t * 0.85 + strength) * (strength * 0.6);
+        const driftY = Math.cos(t * 0.70 + strength * 0.7) * (strength * 0.4);
+
+        const mouseX = -mouseNormX * strength * 1.0;
+        const mouseY = -mouseNormY * strength * 0.8;
+
+        const tx = driftX + mouseX;
+        const ty = driftY + mouseY;
+
+        layer.style.transform = `translate3d(${tx}px, ${ty}px, 0)`;
+      });
+
+      requestAnimationFrame(animate);
+    }
+
+    animate();
+  </script>
 </body>
 </html>
